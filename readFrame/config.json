@@ -1,0 +1,18 @@
+{
+    "Jeanusername":"jgarcia@platanitos.com",
+    "Jeanpassword":"RjS3uWr+2GDMr9cV",
+    "username":"cjustino@platanitos.com",
+    "password":"mi200548TU",
+    "path": "/home/ubuntu/proyectos/microservicePlatanitos/pictures",
+    "Jeancam_uuid":"ded6dffdd5874ff88754ac68d7eaafbf",
+    "cam_uuid": "45c8c70335914d4f9720472ef318f5b1",
+    "right": "5e941e140578442aae102ba181d9ae12",
+    "frame_rate": 12,
+    "width": 1280,
+    "threshold": 200,
+    "clear_images": true,
+    "produce_video": true,
+    "upload_to_azure": false,
+    "az_account_name":"",
+    "az_sas_token":""
+}

@@ -1,0 +1,10 @@
+__pycache__/
+uenv/
+venv/
+rekognition.db
+pictures/
+readFrame/venv
+readFrame/uenv
+readFrame/aenv
+readFrame/src/__pycache__/
+readFrame/src/_temp
