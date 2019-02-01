@@ -1,0 +1,8 @@
+{
+    "path_sqlite":"/home/ubuntu/proyectos/microservicePlatanitos/rekognition.db",
+    "dname_redshift":"main",
+    "host_redshift":"super-jupiter.cbxz5zw04qfi.us-east-1.redshift.amazonaws.com", 
+    "port_redshift":"5439",
+    "user_redshift":"root",
+    "password_redshift":"eV132!629MiK"
+}

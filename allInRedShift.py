@@ -1,7 +1,7 @@
 import datetime
 from datetime import timedelta
 from dataManage import DataManage
-from redshiftManage import RedshiftManage
+from dataManade.redshiftManage import RedshiftManage
 
 if __name__ == '__main__':
 

@@ -1,38 +1,21 @@
-import datetime
-from datetime import timedelta
+
+import json
 import psycopg2
-
-'''CREATE TABLE IF NOT EXISTS public.face
-(
-	face_code VARCHAR(256) NOT NULL  ENCODE lzo
-	,face_name VARCHAR(90)   ENCODE lzo
-	,face_place VARCHAR(256)   ENCODE lzo
-	,face_date TIMESTAMP WITHOUT TIME ZONE NOT NULL  ENCODE lzo
-	,face_averageage SMALLINT   ENCODE lzo
-	,face_ishappy BOOLEAN   ENCODE RAW
-	,face_issad BOOLEAN   ENCODE RAW
-	,face_isangry BOOLEAN   ENCODE RAW
-	,face_isconfused BOOLEAN   ENCODE RAW
-	,face_isdisgusted BOOLEAN   ENCODE RAW
-	,face_issurprised BOOLEAN   ENCODE RAW
-	,face_id BIGINT   ENCODE lzo
-	,face_gender 
-)
-DISTSTYLE EVEN;'''
-
-import json 
 
 class RedshiftManage(object):
 
     def __init__(self):
+
+        with open(os.path.join(os.path.dirname(__file__),'data.json')) as f:
+            data = json.load(f)
+
         self.conn = psycopg2.connect(
-            dbname='main', 
-            host='super-jupiter.cbxz5zw04qfi.us-east-1.redshift.amazonaws.com', 
-            port='5439',
-            user='root', 
-            password='eV132!629MiK')
+            dbname=data['dname_redshift'], 
+            host=data['host_redshift'], 
+            port=data['port_redshift'],
+            user=data['user_redshift'], 
+            password=data['password_redshift'])
         self.cursor = self.conn.cursor()
-        #print(self.cursor)
 
     def add_register(self,faceId,dateFace,place,grop):
 

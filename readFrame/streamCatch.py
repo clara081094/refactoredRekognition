@@ -1,24 +1,18 @@
-# Program To Read video
-# and Extract Frames
+
 import os.path
 import time
 import base64
 import json
 import sys
 from rq import Queue
-from worker import conn
-from utils import calling_frameAnalysis
-from scene import CompareImage
-# Function to extract frames
+from queue.worker import conn
+from queue.utils import calling_frameAnalysis
+from library.scene import CompareImage
 def FrameCapture(q,camara):
-    # Path to video file
-    #vidObj = cv2.VideoCapture(path)
-    # Used as counter variable
+
     count = 1
-    # checks whether frames were extracted
     success = 1
     path="/home/ubuntu/proyectos/microservicePlatanitos/pictures/"
-    #path="/home/clara/FUENTES/microservicePlatanitos/pictures/"
 
     while(success):
 
@@ -60,7 +54,7 @@ def FrameCapture(q,camara):
             if(count>3):
                 print("Se removio: ",count)
                 file2 = path+camara+"/"+"img"+str(count-2)+'.jpg';
-                os.remove(file2)
+                #os.remove(file2)
 
             count += 1
 
@@ -68,12 +62,10 @@ def FrameCapture(q,camara):
             raise ValueError("%s isn't a file!" % file)
 
 
-# Driver Code
 if __name__ == '__main__':
 
     camera=sys.argv[1]
     print(camera)
-    # Calling the function
     q = Queue(connection=conn)
     q.empty()
     FrameCapture(q,camera)
